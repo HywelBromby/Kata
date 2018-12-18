@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
 using Kata.Features.BankOCR.Interfaces;
 using Kata.Features.BankOCR.Models;
 

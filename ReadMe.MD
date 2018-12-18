@@ -23,6 +23,7 @@ For The Purposes of this Kata it is assumed that only valid filenames will be pr
 Outside of the result, logging is not required
 No custom exception handleing is required
 No NFRs have been provided.
+Synchronus opertaion is fine - i.e. no Async is needed.
 
 #Specification
 https://code.joejag.com/coding-dojo/bank-ocr/

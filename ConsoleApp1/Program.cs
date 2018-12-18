@@ -29,15 +29,14 @@ namespace ConsoleApp1
                 .AddSingleton<IDigitalNumberParser, DigitalNumberParser>()
                 .AddSingleton<IIntegerParser, IntegerParser>()
                 .AddSingleton<IBankOCRService, BankOCRService>()
-                .AddSingleton<ICheckSumService, CheckSumService>()
+                .AddSingleton<ICheckSumHelper, CheckSumHelper>()
                 .BuildServiceProvider();
 
             var bankOCRService = serviceProvider.GetService<IBankOCRService>();
-            var checkSumService = serviceProvider.GetService<ICheckSumService>();
+            var checkSumService = serviceProvider.GetService<ICheckSumHelper>();
 
             UserStory1(args, bankOCRService);
-            UserStory2(checkSumService);
-
+            
             Console.ReadLine();
         }
         
@@ -56,33 +55,7 @@ namespace ConsoleApp1
                 Console.WriteLine(line);
             }
         }
-
-        private static void UserStory2(ICheckSumService checkSumservice)
-        {
-            Console.WriteLine("User Story 2 Output");
-
-            foreach (var line in _accountNumbers)
-            {
-                Console.WriteLine(Format(line, checkSumservice));
-            }
-        }
-
-        private static string Format(string line, ICheckSumService checkSumservice)
-        {
-            if (line.Contains(IntegerParser.InvalidNumberString))
-            {
-                return line + "\t ILL";
-            }
-
-            if (!checkSumservice.IsValidCheckSum(line))
-            {
-                return line + "\t ERR";
-            }
-
-            return line;
-        }
-
-
+        
         [Obsolete]
         private static void QuickNDirty(string[] args)
         {

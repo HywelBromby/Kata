@@ -21,12 +21,12 @@ namespace Kata.Foundation.FileAccess.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void ParseNullArgument()
         {
-            ItemUnderTest.Parse(null);
+            ItemUnderTest.Read(null);
         }
 
         //Obviously we would not really want to do file access tests as they could be slow.. but Meh
         [TestMethod]
-        public void ParseSuccess()
+        public void ReadSuccess()
         {
             var expected = new FileParserResponse()
             {
@@ -36,7 +36,7 @@ namespace Kata.Foundation.FileAccess.Tests
                 }
             };
             
-            var actual = ItemUnderTest.Parse($"..\\..\\..\\FileParserTests.txt");
+            var actual = ItemUnderTest.Read($"..\\..\\..\\FileParserTests.txt");
             
             Assert.AreEqual(expected.Lines.ToArray()[0],actual.Lines.ToArray()[0]);
             Assert.AreEqual(expected.Lines.ToArray()[1], actual.Lines.ToArray()[1]);

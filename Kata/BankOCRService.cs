@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Kata.Featres.CheckSum.Interfaces;
 using Kata.Features.BankOCR.Interfaces;
 using Kata.Features.BankOCR.Models;
 using Kata.Foundation.FileAccess.Interfaces;
@@ -13,13 +14,15 @@ namespace Kata.Features.BankOCR.Servcices
         private readonly IEntryParser EntryParser;
         private readonly IDigitalNumberParser DigitalNumberParser;
         private readonly IIntegerParser IntegerParser;
-
-        public BankOCRService(IFileParser fileParser, IEntryParser entryParser, IDigitalNumberParser digitalNumberParser, IIntegerParser inegerParser)
+        private readonly ICheckSumHelper _checkSumService;
+        
+        public BankOCRService(IFileParser fileParser, IEntryParser entryParser, IDigitalNumberParser digitalNumberParser, IIntegerParser inegerParser, ICheckSumHelper checkSumService)
         {
             this.FileParser = fileParser;
             this.EntryParser = entryParser;
             this.DigitalNumberParser = digitalNumberParser;
             this.IntegerParser = inegerParser;
+            _checkSumService = checkSumService;
         }
 
         public IEnumerable<string> GenerateAccountNumbers(string fileName)
@@ -30,7 +33,7 @@ namespace Kata.Features.BankOCR.Servcices
             }
 
             //read the file
-            var fileParserResponse = FileParser.Parse(fileName);
+            var fileParserResponse = FileParser.Read(fileName);
 
             //extract the lines into entries
             var entryParserResponse = EntryParser.Parse(new EntryParserRequest() {Lines = fileParserResponse.Lines});
@@ -40,8 +43,12 @@ namespace Kata.Features.BankOCR.Servcices
 
             //convert the digital numbers to ints
             var integerParserResponse = IntegerParser.Parse(new IntegerParserRequest() {DigitalNumbers = digitalNumberParserResponse.DigitalNumbers});
+
+            var formatedNumbers = integerParserResponse.Numbers.Select(i => _checkSumService.Format(i)).ToList();
             
-            return integerParserResponse.Numbers ;
+            FileParser.Write(fileName+".out", formatedNumbers);
+
+            return formatedNumbers;
         }
     }
 }

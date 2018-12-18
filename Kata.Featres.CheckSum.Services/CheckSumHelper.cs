@@ -1,10 +1,9 @@
 ﻿using Kata.Featres.CheckSum.Interfaces;
 using System;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Kata.Featres.CheckSum.Services
 {
-    public class CheckSumService : ICheckSumService
+    public class CheckSumHelper : ICheckSumHelper
     {
         private const int StringLength = 9;
         private const int InvalidCheckSumValue = -1;
@@ -33,6 +32,21 @@ namespace Kata.Featres.CheckSum.Services
            
           
             return calculatedCheckSum == 0;
+        }
+        
+        public string Format(string line, string invalidNumber= "?")
+        {
+            if (line.Contains(invalidNumber))
+            {
+                return line + " ILL";
+            }
+
+            if (!this.IsValidCheckSum(line))
+            {
+                return line + " ERR";
+            }
+
+            return line;
         }
 
         private static int CalculateCheckSum(string number)

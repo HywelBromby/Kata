@@ -45,13 +45,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickNDirty", "QuickNDirty\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CheckSum", "CheckSum", "{A5FD5D9B-D306-424C-867A-0DF4F4C772E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata.Featres.CheckSum.Services", "Kata.Featres.CheckSum.Services\Kata.Featres.CheckSum.Services.csproj", "{0DB91F97-43AD-4CEB-817B-584DBBCE24CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata.Featres.CheckSum.Helpers", "Kata.Featres.CheckSum.Services\Kata.Featres.CheckSum.Helpers.csproj", "{0DB91F97-43AD-4CEB-817B-584DBBCE24CB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata.Featres.CheckSum.Interfaces", "Kata.Featres.CheckSum.Interfaces\Kata.Featres.CheckSum.Interfaces.csproj", "{D75CB4FB-8CA3-4676-B223-E1E9C566AEB1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata.Featres.CheckSum.Tests", "Kata.Featres.CheckSum.Tests\Kata.Featres.CheckSum.Tests.csproj", "{0F51B9CC-0692-4B68-8B7F-E054EDF04970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopLevelTests", "QuickNDirtyTests\TopLevelTests.csproj", "{F48666E7-1619-4C16-AAAB-621793D4D450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopLevelTests", "QuickNDirtyTests\TopLevelTests.csproj", "{F48666E7-1619-4C16-AAAB-621793D4D450}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

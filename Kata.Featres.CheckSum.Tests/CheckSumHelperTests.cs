@@ -4,9 +4,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Kata.Featres.CheckSum.Tests
 {
     [TestClass]
-    public class CheckSumServiceTests
+    public class CheckSumHelperTests
     {
-        private CheckSumService ItemUnderTest = new CheckSumService();
+        private CheckSumHelper ItemUnderTest = new CheckSumHelper();
 
         [TestMethod]
         public void IsValidCheckSum_Valid()
@@ -64,5 +64,41 @@ namespace Kata.Featres.CheckSum.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
+
+        [TestMethod]
+        public void Format_ValidNumber()
+        {
+            var expected = "711111111";
+
+            var actual = ItemUnderTest.Format("711111111");
+          
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Format_IllFormedNumber()
+        {
+            var expected = "?11111111 ILL";
+
+            var actual = ItemUnderTest.Format("?11111111");
+
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Format_InValidNumber()
+        {
+            var expected = "111111111 ERR";
+
+            var actual = ItemUnderTest.Format("111111111");
+
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }

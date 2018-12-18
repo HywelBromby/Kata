@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Kata.Foundation.FileAccess.Interfaces;
@@ -13,7 +14,7 @@ namespace Kata.Foundation.FileAccess.Services
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public FileParserResponse Parse(string path)
+        public FileParserResponse Read(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
             {
@@ -27,6 +28,11 @@ namespace Kata.Foundation.FileAccess.Services
             };
 
             return fileParserResponse;
+        }
+
+        public void Write(string path, IEnumerable<string> lines)
+        {
+            File.WriteAllLines(path,lines);
         }
     }
 }

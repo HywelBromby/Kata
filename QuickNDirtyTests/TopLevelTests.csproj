@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Kata.Featres.CheckSum.Services\Kata.Featres.CheckSum.Helpers.csproj" />
     <ProjectReference Include="..\Kata.Features.BankOCR.PArsers\Kata.Features.BankOCR.Parsers.csproj" />
     <ProjectReference Include="..\Kata.Foundation.FileAccess.Services\Kata.Foundation.FileAccess.Services.csproj" />
     <ProjectReference Include="..\Kata\Kata.Features.BankOCR.Services.csproj" />
