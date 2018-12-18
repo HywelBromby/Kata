@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Kata.Features.BankOCR.Interfaces;
 using Kata.Features.BankOCR.Models;
@@ -23,6 +24,11 @@ namespace Kata.Features.BankOCR.Servcices
 
         public IEnumerable<string> GenerateAccountNumbers(string fileName)
         {
+            if (String.IsNullOrWhiteSpace(fileName))
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             //read the file
             var fileParserResponse = FileParser.Parse(fileName);
 

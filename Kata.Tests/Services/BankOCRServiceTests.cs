@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Kata.Features.BankOCR.Interfaces;
@@ -49,7 +50,14 @@ namespace Kata.Features.BankOCR.Tests.Services
                 _mockDigitalNumberParser.Object,
                 _mockIntegerParser.Object);
         }
-        
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Parse_ArgumentNull()
+        {
+            ItemUnderTest.GenerateAccountNumbers(null);
+        }
+
         [TestMethod]
         public void GetAccountNumbers_FileParserCalled()
         {

@@ -10,6 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Kata.Featres.CheckSum.Interfaces\Kata.Featres.CheckSum.Interfaces.csproj" />
+    <ProjectReference Include="..\Kata.Featres.CheckSum.Services\Kata.Featres.CheckSum.Services.csproj" />
     <ProjectReference Include="..\Kata.Features.BankOCR.PArsers\Kata.Features.BankOCR.Parsers.csproj" />
     <ProjectReference Include="..\Kata.Foundation.FileAccess.Interfaces\Kata.Foundation.FileAccess.Interfaces.csproj" />
     <ProjectReference Include="..\Kata.Foundation.FileAccess.Models\Kata.Foundation.FileAccess.Models.csproj" />

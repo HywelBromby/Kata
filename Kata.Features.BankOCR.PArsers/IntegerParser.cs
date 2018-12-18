@@ -9,6 +9,7 @@ namespace Kata.Features.BankOCR.Parsers
 {
     public class IntegerParser : IIntegerParser
     {
+        public static readonly string InvalidNumberString = "?";
         public IntegerParserResponse Parse(IntegerParserRequest request)
         {
             if (request == null)
@@ -67,7 +68,7 @@ namespace Kata.Features.BankOCR.Parsers
                 case (int) BitMaskValues.nine:
                     return "9";
                 default:
-                    return "?";
+                    return InvalidNumberString;
             }
         }
 

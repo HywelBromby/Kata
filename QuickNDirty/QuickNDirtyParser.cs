@@ -4,6 +4,7 @@ using System.IO;
 
 namespace QuickNDirty
 {
+    [Obsolete]
     public class QuickNDirtyParser
     {
         private const int linesPerItem = 4;
@@ -24,6 +25,7 @@ namespace QuickNDirty
             nine = 442
         }
 
+        [Obsolete]
         public static List<string> GetNumbers(string fileName)
         {
             string[] lines = File.ReadAllLines(fileName);
