@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kata.Features.BankOCR.PArsers\Kata.Features.BankOCR.Parsers.csproj" />
+    <ProjectReference Include="..\Kata.Foundation.FileAccess.Interfaces\Kata.Foundation.FileAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\Kata.Foundation.FileAccess.Models\Kata.Foundation.FileAccess.Models.csproj" />
+    <ProjectReference Include="..\Kata.Foundation.FileAccess.Services\Kata.Foundation.FileAccess.Services.csproj" />
+    <ProjectReference Include="..\Kata.Interfaces\Kata.Features.BankOCR.Interfaces.csproj" />
+    <ProjectReference Include="..\Kata.Models\Kata.Features.BankOCR.Models.csproj" />
+    <ProjectReference Include="..\Kata\Kata.Features.BankOCR.Services.csproj" />
+    <ProjectReference Include="..\QuickNDirty\QuickNDirty.csproj" />
+  </ItemGroup>
+
+</Project>

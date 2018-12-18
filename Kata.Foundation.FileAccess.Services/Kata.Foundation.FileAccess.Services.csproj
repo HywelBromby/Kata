@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kata.Foundation.FileAccess.Interfaces\Kata.Foundation.FileAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\Kata.Foundation.FileAccess.Models\Kata.Foundation.FileAccess.Models.csproj" />
+  </ItemGroup>
+
+</Project>

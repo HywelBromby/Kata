@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kata
+namespace Kata.Featres.CheckSum.Services
 {
     public class Class1
     {

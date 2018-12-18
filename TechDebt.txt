@@ -1,0 +1,2 @@
+1. The naming of a lot of the services and types is pretty poor and could do with improving
+1. Validation of files structure would make things far more defensive.

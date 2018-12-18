@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kata.Foundation.FileAccess.Interfaces\Kata.Foundation.FileAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\Kata.Foundation.FileAccess.Models\Kata.Foundation.FileAccess.Models.csproj" />
+    <ProjectReference Include="..\Kata.Interfaces\Kata.Features.BankOCR.Interfaces.csproj" />
+    <ProjectReference Include="..\Kata.Models\Kata.Features.BankOCR.Models.csproj" />
+  </ItemGroup>
+
+</Project>
